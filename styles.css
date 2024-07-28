@@ -75,7 +75,13 @@ body.light {
   transform: scale(1.1);
 }
 
-.js-result,
+.js-result {
+  font-size: 2rem;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
 .js-moves,
 .js-score {
   font-size: 1.2em;

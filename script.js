@@ -57,7 +57,16 @@ function playGame(playerMove) {
 }
 
 function updateResult(result) {
-  document.querySelector(".js-result").textContent = result;
+  const resultElement = document.querySelector(".js-result");
+  resultElement.textContent = result;
+
+  if (result === "You Win") {
+    resultElement.style.color = "green";
+  } else if (result === "You Lose") {
+    resultElement.style.color = "red";
+  } else {
+    resultElement.style.color = "";
+  }
 }
 
 function updateMoves(playerMove, computerMove) {
@@ -69,7 +78,7 @@ function updateMoves(playerMove, computerMove) {
 function updateScore() {
   document.querySelector(
     ".js-score"
-  ).textContent = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+  ).innerHTML = `<span style="color: green;">Wins: ${score.wins}</span> , <span style="color: red;">Losses: ${score.losses}</span> , <span style="color: black;"> Ties: ${score.ties}</span>`;
 }
 
 function pickComputerMove() {
